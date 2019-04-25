@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\UserRequest;
+use App\Http\Resources\Api\UserCollection;
+use App\Http\Resources\Api\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,7 +19,8 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        return $this->success($user);
+        3/0;
+        return $this->success(new UserResource($user));
     }
 
     public function store(UserRequest $request)
@@ -38,7 +41,7 @@ class UsersController extends Controller
         //用户登录
     public function login(Request $request){
 
-        $result = \Auth::guard('web')->attempt(['name'=>$request->name,'password'=>$request->password]);
+        $result = \Auth::guard('web')->attempt(['name'=>$request->name, 'password'=>$request->password]);
 
         if ($result) {
             return $this->setStatusCode(201)->success('用户登录成功');
