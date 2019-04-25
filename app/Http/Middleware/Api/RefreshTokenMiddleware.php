@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Middleware\Api;
 
 use Auth;
@@ -12,7 +13,16 @@ use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 // 注意，我们要继承的是 jwt 的 BaseMiddleware
 class RefreshTokenMiddleware extends BaseMiddleware
 {
-
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     *
+     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
+     *
+     * @return mixed
+     */
     public function handle($request, Closure $next)
     {
         // 检查此次请求中是否带有 token，如果没有则抛出异常。
