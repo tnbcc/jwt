@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'cors'=> \Medz\Cors\Laravel\Middleware\ShouldGroup::class,
         'api.refresh'=>\App\Http\Middleware\Api\RefreshTokenMiddleware::class,
+        'admin.refresh'=>\App\Http\Middleware\Api\Admin\RefreshAdminTokenMiddleware::class,
     ];
 
     /**

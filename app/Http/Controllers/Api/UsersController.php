@@ -42,9 +42,13 @@ class UsersController extends Controller
     {
 
 
-        if($token = \Auth::guard('api')->attempt(['name'=>$request->name, 'password'=>$request->password])) {
+        if ($token = \Auth::guard('api')->attempt(['name'=>$request->name, 'password'=>$request->password])) {
 
-            return $this->setStatusCode(201)->success(['token' => 'bearer ' . $token]);
+            return $this->setStatusCode(201)->success([
+                'token' => 'bearer ' . $token,
+                'token_type' => 'Bearer',
+                'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
+            ]);
 
         }
 
