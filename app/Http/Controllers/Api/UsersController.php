@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\UserRequest;
-use App\Http\Resources\Api\UserCollection;
 use App\Http\Resources\Api\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 
 class UsersController extends Controller
 {
@@ -41,8 +41,26 @@ class UsersController extends Controller
     public function login(Request $request)
     {
 
+        //获取当前守护的名称
+        $present_guard = \Auth::getDefaultDriver();
 
-        if ($token = \Auth::guard('api')->attempt(['name'=>$request->name, 'password'=>$request->password])) {
+        if ($token = \Auth::claims(['guard' => $present_guard])->attempt(['name'=>$request->name, 'password'=>$request->password])) {
+
+
+            $user = \Auth::user();
+
+            if ($user->last_token) {
+                try {
+
+                    \Auth::setToken($user->last_token)->invalidate();
+
+                } catch (TokenExpiredException  $e) {
+
+                }
+            }
+
+            $user->last_token = $token;
+            $user->save();
 
             return $this->setStatusCode(201)->success([
                 'token' => 'bearer ' . $token,
@@ -58,7 +76,7 @@ class UsersController extends Controller
 
     public function logout()
     {
-      \Auth::guard('api')->logout();
+      \Auth::logout();
 
       return $this->success('退出成功');
     }
@@ -66,7 +84,7 @@ class UsersController extends Controller
    public function info()
    {
 
-       $user = \Auth::guard('api')->user();
+       $user = \Auth::user();
 
        return $this->success(new UserResource($user));
    }
