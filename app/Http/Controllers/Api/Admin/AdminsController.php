@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Requests\Api\Admin\AdminRequest;
+use App\Http\Requests\Api\Admin\Permission\StoreRoleRequest;
 use App\Http\Resources\Api\Admin\AdminResource;
 use App\Jobs\Api\SaveLastTokenJob;
 use App\Models\Admin\Admin;
+use App\Models\Admin\Permission\AdminRole;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 
@@ -90,4 +92,53 @@ class AdminsController extends Controller
         return $this->success(new AdminResource($admin));
     }
 
+    //管理员角色页面
+    public function role(Request $request)
+    {
+
+
+        $pageSize = $request->input('pageSize', 10);
+
+        $roles  = AdminRole::query()->paginate($pageSize);
+
+        //当前用户角色
+        $myRole = \Auth::user()->roles;
+
+        $data = [
+            'roles'       => $roles,
+            'myRole'      => $myRole,
+            'admin_id'  => \Auth::user()->id,
+        ];
+
+        return $this->setStatusCode(201)->success($data);
+    }
+
+    //创建管理员角色
+    public function storeRole(StoreRoleRequest $request)
+    {
+       $ids = $request->input('roles');
+
+       $roles = AdminRole::query()->findMany($ids);
+
+       $admin = \Auth::user();
+
+       $myRoles = $admin->roles;
+
+       //要增加的(跟myRoles的差集)
+        $addRoles = $roles->diff($myRoles);
+
+        $addRoles->each(function (AdminRole $role) use ($admin) {
+            $admin->assignRole($role);
+        });
+
+       //要删除
+        $deleteRoles = $myRoles->diff($roles);
+
+        $deleteRoles->each(function (AdminRole $role) use ($admin){
+            $admin->deleteRole($role);
+        });
+
+        return $this->success('创建管理员角色成功');
+
+    }
 }

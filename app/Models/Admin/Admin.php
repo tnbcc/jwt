@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\Admin\Permission\AdminRole;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
