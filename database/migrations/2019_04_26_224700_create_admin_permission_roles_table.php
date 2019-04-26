@@ -13,14 +13,14 @@ class CreateAdminPermissionRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create(\App\Models\Admin\AdminPermissionRole::TABLE, function (Blueprint $table) {
+        Schema::create(\App\Models\Admin\Permission\AdminPermissionRole::TABLE, function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('role_id');
             $table->unsignedInteger('permission_id');
             $table->timestamps();
             $table->dateTime('deleted_at')->nullable();
         });
-        DB::statement("ALTER TABLE ".\App\Models\Admin\AdminPermissionRole::GetDBPrefix().\App\Models\Admin\AdminPermissionRole::TABLE." comment '权限角色表'");
+        DB::statement("ALTER TABLE ".\App\Models\Admin\Permission\AdminPermissionRole::GetDBPrefix().\App\Models\Admin\Permission\AdminPermissionRole::TABLE." comment '权限角色表'");
 
     }
 
@@ -31,6 +31,6 @@ class CreateAdminPermissionRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(\App\Models\Admin\AdminPermissionRole::TABLE);
+        Schema::dropIfExists(\App\Models\Admin\Permission\AdminPermissionRole::TABLE);
     }
 }

@@ -37,6 +37,14 @@ Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
             //管理员信息
             Route::get('/admins/{admin}', 'AdminsController@show')->name('admins.show');
 
+
+            //权限管理
+            Route::namespace('Permission')->group(function () {
+                //角色列表
+                Route::get('roles', 'RolesController@index')->name('admins.roles.index');
+            });
+
+
         });
 
     });

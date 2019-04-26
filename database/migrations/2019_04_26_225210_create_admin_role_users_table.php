@@ -13,13 +13,13 @@ class CreateAdminRoleUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create(\App\Models\Admin\AdminRoleUser::TABLE, function (Blueprint $table) {
+        Schema::create(\App\Models\Admin\Permission\AdminRoleUser::TABLE, function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('role_id');
             $table->unsignedInteger('admin_id');
             $table->timestamps();
         });
-        DB::statement("ALTER TABLE ".\App\Models\Admin\AdminRoleUser::GetDBPrefix().\App\Models\Admin\AdminRoleUser::TABLE." comment '用户角色表'");
+        DB::statement("ALTER TABLE ".\App\Models\Admin\Permission\AdminRoleUser::GetDBPrefix().\App\Models\Admin\Permission\AdminRoleUser::TABLE." comment '用户角色表'");
 
     }
 
@@ -30,6 +30,6 @@ class CreateAdminRoleUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(\App\Models\Admin\AdminRoleUser::TABLE);
+        Schema::dropIfExists(\App\Models\Admin\Permission\AdminRoleUser::TABLE);
     }
 }
