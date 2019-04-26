@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Requests\Api\Admin\AdminRequest;
 use App\Http\Resources\Api\Admin\AdminResource;
+use App\Jobs\Api\SaveLastTokenJob;
 use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
@@ -59,14 +60,13 @@ class AdminsController extends Controller
                     //因为让一个过期的token再失效，会抛出异常，所以我们捕捉异常，不需要做任何处理
                 }
             }
-            $user->last_token = $token;
 
-            $user->save();
+            $this->dispatch(new SaveLastTokenJob($user, $token));
             
             return $this->setStatusCode(201)->success([
                 'token'      => 'bearer ' . $token,
                 'token_type' => 'Bearer',
-                'expires_in' => \Auth::guard('admin')->factory()->getTTL() * 60
+                'expires_in' => \Auth::guard('admin')->factory()->getTTL()
             ]);
 
         }

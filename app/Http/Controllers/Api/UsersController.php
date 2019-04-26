@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\UserRequest;
 use App\Http\Resources\Api\UserResource;
+use App\Jobs\Api\SaveLastTokenJob;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
@@ -59,13 +60,12 @@ class UsersController extends Controller
                 }
             }
 
-            $user->last_token = $token;
-            $user->save();
+            $this->dispatch(new SaveLastTokenJob($user, $token));
 
             return $this->setStatusCode(201)->success([
                 'token' => 'bearer ' . $token,
                 'token_type' => 'Bearer',
-                'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
+                'expires_in' => \Auth::guard('api')->factory()->getTTL()
             ]);
 
         }
