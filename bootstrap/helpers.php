@@ -2,5 +2,5 @@
 
 function test()
 {
-    
+
 }

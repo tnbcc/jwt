@@ -116,29 +116,37 @@ class AdminsController extends Controller
     //创建管理员角色
     public function storeRole(StoreRoleRequest $request)
     {
-       $ids = $request->input('roles');
+       try {
+           $ids = $request->input('roles');
 
-       $roles = AdminRole::query()->findMany($ids);
+           $roles = AdminRole::query()->findMany($ids);
 
-       $admin = \Auth::user();
+           $admin = \Auth::user();
 
-       $myRoles = $admin->roles;
+           $myRoles = $admin->roles;
 
-       //要增加的(跟myRoles的差集)
-        $addRoles = $roles->diff($myRoles);
+           //要增加的(跟myRoles的差集)
+           $addRoles = $roles->diff($myRoles);
 
-        $addRoles->each(function (AdminRole $role) use ($admin) {
-            $admin->assignRole($role);
-        });
+           $addRoles->each(function (AdminRole $role) use ($admin) {
+               $admin->assignRole($role);
+           });
 
-       //要删除
-        $deleteRoles = $myRoles->diff($roles);
+           //要删除
+           $deleteRoles = $myRoles->diff($roles);
 
-        $deleteRoles->each(function (AdminRole $role) use ($admin){
-            $admin->deleteRole($role);
-        });
+           $deleteRoles->each(function (AdminRole $role) use ($admin){
+               $admin->deleteRole($role);
+           });
 
-        return $this->success('创建管理员角色成功');
+           return $this->success('创建管理员角色成功');
+       } catch (\Exception $e) {
+           \Log::error('创建管理员角色失败'.$e->getMessage(), [
+               'data' => $ids,
+           ]);
+           return $this->failed('创建管理员失败');
+       }
+
 
     }
 }
