@@ -32,6 +32,39 @@ class Admin extends Authenticatable implements JWTSubject
         'password'
     ];
 
+
+    //管理员有哪些角色
+    public function roles()
+    {
+        return $this->belongsToMany(AdminRole::class, 'admin_role_user', 'admin_id', 'role_id')
+                    ->withPivot(['admin_id', 'role_id']);
+    }
+
+    //是否有某个觉得、某些角色
+    public function isInRoles($roles)
+    {
+        return !!$roles->intersect($this->roles)->count();
+    }
+
+    //给管理员分配角色
+    public function assignRole($role)
+    {
+        return $this->roles()->save($role);
+    }
+
+    //取消管理员分配的角色
+    public function deleteRole($role)
+    {
+        return $this->roles()->detach($role);
+    }
+
+    //管理员是否有权限
+
+    public function hasPermission($permission)
+    {
+        return $this->isInRoles($permission->roles);
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();

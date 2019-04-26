@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d044370c-29c1-40b7-841a-38240c8bb9d4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/AdminPermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/AdminPermission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/AdminRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/AdminRole.php" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +36,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Admin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Models/Admin/Admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1334">
+              <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
+              <folding>
+                <element signature="e#36#76#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2019_04_26_224700_create_admin_permission_roles_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_26_224700_create_admin_permission_roles_table.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019_04_26_225210_create_admin_role_users_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2019_04_26_225210_create_admin_role_users_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_26_225210_create_admin_role_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
@@ -63,8 +78,8 @@
       <file leaf-file-name="AdminRole.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Admin/AdminRole.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="35" />
+            <state relative-caret-position="1032">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -72,17 +87,8 @@
       <file leaf-file-name="AdminPermission.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Admin/AdminPermission.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApiGuardMiddleware.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Api/ApiGuardMiddleware.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+            <state relative-caret-position="528">
+              <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -114,11 +120,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/database/migrations/2019_04_26_223630_create_admin_permissions_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/Admin/AdminPermission.php" />
         <option value="$PROJECT_DIR$/app/Models/Admin/AdminPermissionRole.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_26_224700_create_admin_permission_roles_table.php" />
         <option value="$PROJECT_DIR$/app/Models/Admin/AdminRoleUser.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_26_225210_create_admin_role_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Admin/AdminRole.php" />
+        <option value="$PROJECT_DIR$/app/Models/Admin/AdminPermission.php" />
+        <option value="$PROJECT_DIR$/app/Models/Admin/Admin.php" />
       </list>
     </option>
   </component>
@@ -243,12 +251,12 @@
       <workItem from="1556202622584" duration="7058000" />
       <workItem from="1556240878594" duration="12733000" />
       <workItem from="1556271729995" duration="1445000" />
-      <workItem from="1556286258989" duration="2844000" />
+      <workItem from="1556286258989" duration="4328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1061000" />
+    <option name="totallyTimeSpent" value="2545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="135" y="92" width="2547" height="2002" extended-state="0" />
@@ -535,16 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Admin/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#36#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Admin/Role.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_26_172621_create_roles_table.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Api/RefreshTokenMiddleware.php">
@@ -568,13 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Admin/AdminRole.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/BaseModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -582,13 +573,6 @@
           <folding>
             <element signature="e#30#69#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Admin/AdminPermission.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -631,6 +615,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Admin/AdminRole.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Admin/AdminPermission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Admin/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
+          <folding>
+            <element signature="e#36#76#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
