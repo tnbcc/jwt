@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories\Admin\Permission;
 
+use App\Handlers\Tree;
 use App\Http\Requests\Api\Admin\Permission\StoreRolePermissionRequest;
 use App\Models\Admin\Permission\AdminPermission;
 use App\Models\Admin\Permission\AdminRole;
@@ -34,12 +35,12 @@ class RolesRepository extends BaseRepository
         }
     }
 
-    public function permission(AdminRole $role)
+    public function permission(AdminRole $role, PermissionsRepository $permissionsRepository, Tree $tree)
     {
        //获取所有权限
-        $permissions = AdminPermission::all();
+        $permissions = $tree::channelLevel($permissionsRepository->getRules(), 0, '&nbsp;', 'id','parent_id');
        //获取当前角色的权限
-        $myPermission = $role->permissions;
+        $myPermission = $role->permissions->pluck('id');
 
         $data = [
             'permissions'  => $permissions,
@@ -70,12 +71,12 @@ class RolesRepository extends BaseRepository
             $deletePermission->each(function (AdminPermission $permission) use ($role) {
                 $role->deletePermission($permission);
             });
-            $this->success('给角色赋予权限成功');
+            $this->success('授权成功');
         } catch (\Exception $e) {
-             \Log::error('角色赋予权限失败'.$e->getMessage(), [
+             \Log::error('授权失败'.$e->getMessage(), [
                 'data' => $permissions,
              ]);
-             return $this->failed('角色赋予权限失败', 400);
+             return $this->failed('授权失败', 400);
         }
 
     }

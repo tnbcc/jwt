@@ -4,20 +4,23 @@ namespace App\Http\Controllers\Api\Admin\Permission;
 
 use App\Http\Requests\Api\Admin\Permission\CreatePermissionRequest;
 use App\Repositories\Admin\Permission\PermissionsRepository;
+use App\Services\Admin\PermissionsService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PermissionsController extends Controller
 {
-    public function __construct(PermissionsRepository $repository)
+    protected $permissionsService;
+
+    public function __construct(PermissionsService $permissionsService)
     {
-        $this->repository = $repository;
+        $this->permissionsService = $permissionsService;
     }
 
     //权限列表
-    public function index(Request $request)
+    public function index()
     {
-        return $this->repository->index($request);
+        return $this->permissionsService->getRulesTree();
     }
 
     //创建权限

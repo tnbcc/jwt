@@ -3,6 +3,8 @@
 namespace App\Models\Admin;
 
 use App\Models\Admin\Permission\AdminRole;
+
+use App\Traits\Api\RbacCheck;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +12,9 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class Admin extends Authenticatable implements JWTSubject
 {
+    use RbacCheck;
     use Notifiable;
+
 
     const USER_STATUS_DELETED = -1;
     const USER_STATUS_NORMAL  = 0;
@@ -80,4 +84,5 @@ class Admin extends Authenticatable implements JWTSubject
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
 }

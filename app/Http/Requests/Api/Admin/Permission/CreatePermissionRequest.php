@@ -21,7 +21,9 @@ class CreatePermissionRequest extends Request
                     }
                 }
             ],
-            'description' => 'required|string'
+            'description' => 'required|string',
+            'parent_id' => 'integer',
+            ''
         ];
     }
 

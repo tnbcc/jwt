@@ -42,5 +42,14 @@ class AdminRole extends BaseModel
         return $this->permissions->contains($permission);
     }
 
+    /**
+     * 获取显示的权限
+     * @return mixed
+     */
+    public function permissionsPublic()
+    {
+        return $this->permissions()->public()->orderBy('sort','asc')->get();
+    }
+
 
 }

@@ -13,7 +13,18 @@ class AdminPermission extends BaseModel
 
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'route',
+        'parent_id',
+        'is_hidden',
+        'sort',
+        'status',
+        'fonts'
+    ];
+
+    protected $casts = [
+        'is_hidden' => 'boolean',
+        'status'    => 'boolean',
     ];
 
     //权限属于哪个角色
@@ -21,5 +32,15 @@ class AdminPermission extends BaseModel
     {
         return $this->belongsToMany(AdminRole::class, 'admin_permission_role', 'permission_id', 'role_id')
                     ->withPivot(['permission_id', 'role_id']);
+    }
+
+    /**
+     * 只获取显示的数据
+     * @param $query
+     * @return mixed
+     */
+    public function scopePublic($query)
+    {
+        return $query->where('is_hidden', false);
     }
 }
