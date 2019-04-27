@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Api\Admin\Permission;
 
+use App\Handlers\Tree;
 use App\Http\Requests\Api\Admin\Permission\CreateRoleRequest;
 use App\Http\Requests\Api\Admin\Permission\StoreRolePermissionRequest;
 use App\Models\Admin\Permission\AdminRole;
+use App\Repositories\Admin\Permission\PermissionsRepository;
 use App\Repositories\Admin\Permission\RolesRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -29,9 +31,9 @@ class RolesController extends Controller
     }
 
     //查看某个角色的权限
-    public function permission(AdminRole $role)
+    public function permission(AdminRole $role, PermissionsRepository $permissionsRepository, Tree $tree)
     {
-        return $this->repository->permission($role);
+        return $this->repository->permission($role, $permissionsRepository, $tree);
     }
 
     //创建某个角色权限

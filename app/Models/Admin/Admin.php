@@ -70,6 +70,24 @@ class Admin extends Authenticatable implements JWTSubject
         return $this->isInRoles($permission->roles);
     }
 
+    /**
+     * 判断某个路由当前登录管理员是否有权限访问
+     * @param $route
+     * @return bool true / false
+     */
+    public function hasRule($route)
+    {
+        /**获取当前用户的用户组*/
+        if(in_array(1,$this->roles->pluck('id')->toArray()))
+        {
+            return true;
+        }
+
+        $rules = $this->getRules();
+
+        return in_array($route, $rules);
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();

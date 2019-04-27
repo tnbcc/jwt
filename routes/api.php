@@ -27,7 +27,7 @@ Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
         Route::post('/admins', 'AdminsController@store')->name('admins.store');
         //管理员登录
         Route::post('/admin/login', 'AdminsController@login')->name('admins.login');
-        Route::middleware('admin.refresh')->group(function () {
+        Route::middleware(['admin.refresh', 'rbac'])->group(function () {
 
             //管理员角色列表
             Route::get('/admins/role', 'AdminsController@role')->name('admins.role');
