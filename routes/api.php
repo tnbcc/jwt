@@ -27,6 +27,8 @@ Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
         Route::post('/admins', 'AdminsController@store')->name('admins.store');
         //管理员登录
         Route::post('/admin/login', 'AdminsController@login')->name('admins.login');
+
+        //需要授权模块
         Route::middleware(['admin.refresh', 'rbac'])->group(function () {
 
             //管理员角色列表
