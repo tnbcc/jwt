@@ -89,6 +89,7 @@ trait RbacCheck
 
 
         $rules = Cache::tags(['rbac', 'menus'])->get($menu_cache);
+        
 
         return Tree::array_tree($rules);
     }
