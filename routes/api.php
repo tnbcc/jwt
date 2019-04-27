@@ -3,6 +3,7 @@ use Illuminate\Http\Request;
 
 Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
 
+    #前台
     Route::middleware('api.guard')->group(function () {
         //用户注册
         Route::post('/users','UsersController@store')->name('users.store');
@@ -22,6 +23,8 @@ Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
     });
 
 
+
+    #后台
     Route::namespace('Admin')->middleware('admin.guard')->group(function () {
         //管理员注册
         Route::post('/admins', 'AdminsController@store')->name('admins.store');
