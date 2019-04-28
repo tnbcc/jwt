@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d044370c-29c1-40b7-841a-38240c8bb9d4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/AdminsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/AdminsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/RolesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRolePermissionRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRolePermissionRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Admin/Permission/RolesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Admin/Permission/RolesRepository.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper/" />
     <ignored path="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock/" />
@@ -129,19 +131,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogsRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/Admin/Log/LogsRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
-              <folding>
-                <element signature="e#45#74#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PermissionsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PermissionsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/PermissionsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
@@ -153,8 +143,8 @@
       <file leaf-file-name="RolesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/RolesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+            <state relative-caret-position="696">
+              <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
               <folding>
                 <element signature="e#61#83#0#PHP" expanded="true" />
               </folding>
@@ -165,10 +155,19 @@
       <file leaf-file-name="RolesRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Repositories/Admin/Permission/RolesRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="40" column="72" lean-forward="true" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
+            <state relative-caret-position="96">
+              <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StoreRolePermissionRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRolePermissionRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="20" column="67" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="67" />
               <folding>
-                <element signature="e#52#74#0#PHP" expanded="true" />
+                <element signature="e#59#89#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,8 +200,8 @@
       <file leaf-file-name="AdminsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/AdminsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="933">
-              <caret line="127" column="42" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+            <state relative-caret-position="-423">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="e#50#95#0#PHP" expanded="true" />
               </folding>
@@ -219,11 +218,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoreRoleRequest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StoreRoleRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="888">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="e#59#89#0#PHP" expanded="true" />
               </folding>
@@ -259,7 +258,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/CreateRoleRequest.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/InvalidRequestException.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRolePermissionRequest.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Models/Admin/Permission/AdminRole.php" />
@@ -267,8 +265,6 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/CreatePermissionRequest.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_26_223630_create_admin_permissions_table.php" />
         <option value="$PROJECT_DIR$/app/Models/Admin/Permission/AdminPermission.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Admin/Permission/RolesRepository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/RolesController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Traits/Api/RbacCheck.php" />
         <option value="$PROJECT_DIR$/app/Observers/Admin/RoleObserver.php" />
@@ -288,8 +284,11 @@
         <option value="$PROJECT_DIR$/app/Services/Admin/PermissionsService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/PermissionsController.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Admin/Permission/PermissionsRepository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/AdminsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/RolesController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRolePermissionRequest.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Admin/Permission/RolesRepository.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/AdminsController.php" />
       </list>
     </option>
   </component>
@@ -657,12 +656,12 @@
       <workItem from="1556332499756" duration="8406000" />
       <workItem from="1556373405655" duration="3228000" />
       <workItem from="1556434963754" duration="8416000" />
-      <workItem from="1556462480256" duration="3002000" />
+      <workItem from="1556462480256" duration="3687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26118000" />
+    <option name="totallyTimeSpent" value="26803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="135" y="92" width="2547" height="2002" extended-state="0" />
@@ -773,13 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="34" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRolePermissionRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1023,43 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Log/LogsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="e#54#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/PermissionsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/RolesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding>
-            <element signature="e#61#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Admin/Permission/RolesRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="40" column="72" lean-forward="true" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
-          <folding>
-            <element signature="e#52#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/Admin/Permission/PermissionsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1608">
@@ -1074,23 +1029,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#59#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRolePermissionRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="67" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="67" />
+          <folding>
+            <element signature="e#59#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/RolesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="e#61#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Admin/Permission/RolesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Log/LogsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="e#54#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/AdminsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
-          <caret line="127" column="42" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+        <state relative-caret-position="-423">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="e#50#95#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Admin/Permission/PermissionsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="e#59#89#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="576">
+          <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
         </state>
       </provider>
     </entry>

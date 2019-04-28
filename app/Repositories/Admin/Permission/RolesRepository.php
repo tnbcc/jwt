@@ -3,7 +3,6 @@ namespace App\Repositories\Admin\Permission;
 
 use App\Handlers\Tree;
 use App\Http\Requests\Api\Admin\Permission\StoreRolePermissionRequest;
-use App\Models\Admin\Permission\AdminPermission;
 use App\Models\Admin\Permission\AdminRole;
 use App\Repositories\BaseRepository;
 use Illuminate\Http\Request;
@@ -54,27 +53,14 @@ class RolesRepository extends BaseRepository
     public function storePermission(StoreRolePermissionRequest $request, AdminRole $role)
     {
         try {
-            $permissions   = AdminPermission::findMany($request->input('permissions'));
 
-            $myPermissions = $role->permissions;
 
-            //增加的
-            $addPermission = $permissions->diff($myPermissions);
+            $role->permissions()->sync($request->input('permissions'));
 
-            $addPermission->each(function (AdminPermission $permission) use ($role) {
-                $role->grantPermission($permission);
-            });
-
-            //要删除的
-            $deletePermission = $myPermissions->diff($permissions);
-
-            $deletePermission->each(function (AdminPermission $permission) use ($role) {
-                $role->deletePermission($permission);
-            });
-            $this->success('授权成功');
+            $this->setStatusCode(201)->success('授权成功');
         } catch (\Exception $e) {
              \Log::error('授权失败'.$e->getMessage(), [
-                'data' => $permissions,
+                'data' => $request->input('permissions'),
              ]);
              return $this->failed('授权失败', 400);
         }

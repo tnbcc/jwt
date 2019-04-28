@@ -52,12 +52,10 @@ class AdminsController extends Controller
     public function login(Request $request)
     {
 
-
         //获取当前守护的名称
         $present_guard = \Auth::getDefaultDriver();
 
         if ($token = \Auth::claims(['guard' => $present_guard])->attempt(['name'=>$request->name, 'password'=>$request->password])) {
-
 
             //如果登陆，先检查原先是否有存token，有的话先失效，然后再存入最新的token
             $user = \Auth::user();
@@ -133,35 +131,14 @@ class AdminsController extends Controller
 
           \Auth::user()->roles()->sync($ids);
 
-
-           /*$roles = AdminRole::query()->findMany($ids);
-
-           $admin = \Auth::user();
-
-           $myRoles = $admin->roles;
-
-           //要增加的(跟myRoles的差集)
-           $addRoles = $roles->diff($myRoles);
-
-           $addRoles->each(function (AdminRole $role) use ($admin) {
-               $admin->assignRole($role);
-           });
-
-           //要删除
-           $deleteRoles = $myRoles->diff($roles);
-
-           $deleteRoles->each(function (AdminRole $role) use ($admin){
-               $admin->deleteRole($role);
-           });*/
-
            return $this->setStatusCode(201)->success('创建管理员角色成功');
+
        } catch (\Exception $e) {
            \Log::error('创建管理员角色失败'.$e->getMessage(), [
                'data' => $ids,
            ]);
            return $this->failed('创建管理员失败', 400);
        }
-
 
     }
 }

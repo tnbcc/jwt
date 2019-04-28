@@ -30,7 +30,7 @@ class RolesController extends Controller
         return $this->repository->store($request);
     }
 
-    //查看某个角色的权限
+    //展示分配权限页面
     public function permission(AdminRole $role, PermissionsRepository $permissionsRepository, Tree $tree)
     {
         return $this->repository->permission($role, $permissionsRepository, $tree);
