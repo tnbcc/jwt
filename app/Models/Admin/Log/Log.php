@@ -13,7 +13,7 @@ class Log extends BaseModel
     protected $table = self::TABLE;
 
     protected $fillable = [
-        'data'
+        'data', 'admin_id'
     ];
 
     protected $casts = [

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c65e12400743a70388d5d2a08720215c",
+    "content-hash": "98cee5de90f1cf8df14b6a601e7c6c67",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -4171,6 +4171,60 @@
                 "psr-7"
             ],
             "time": "2018-09-05T19:29:37+00:00"
+        },
+        {
+            "name": "zhuzhichao/ip-location-zh",
+            "version": "v2.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zhuzhichao/ip-location-zh.git",
+                "reference": "cede121e980bf1f911c8f7915537c62af93cf920"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zhuzhichao/ip-location-zh/zipball/cede121e980bf1f911c8f7915537c62af93cf920",
+                "reference": "cede121e980bf1f911c8f7915537c62af93cf920",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Ip": "Zhuzhichao\\IpLocationZh\\Ip"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zhuzhichao\\IpLocationZh\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "zhuzhichao",
+                    "email": "me@zhuzhichao.com"
+                }
+            ],
+            "description": "get the ip's location info with Chinese",
+            "keywords": [
+                "Chinese",
+                "IP",
+                "location"
+            ],
+            "time": "2018-12-21T13:25:24+00:00"
         }
     ],
     "packages-dev": [

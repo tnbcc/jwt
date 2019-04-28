@@ -8,11 +8,19 @@ use App\Http\Resources\Api\Admin\AdminResource;
 use App\Jobs\Api\SaveLastTokenJob;
 use App\Models\Admin\Admin;
 use App\Models\Admin\Permission\AdminRole;
+use App\Repositories\Admin\Log\LogsRepository;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 
 class AdminsController extends Controller
 {
+
+
+    public function __construct(LogsRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function index()
     {
         $admins = Admin::query()->paginate(3);
@@ -64,6 +72,9 @@ class AdminsController extends Controller
             }
 
             $this->dispatch(new SaveLastTokenJob($user, $token));
+
+            //记录登录操作记录
+            $this->repository->loginActionLogCreate($request,true);
             
             return $this->setStatusCode(201)->success([
                 'token'      => 'bearer ' . $token,
