@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\Admin\Log\Log;
 use App\Models\Admin\Permission\AdminRole;
 
 use App\Traits\Api\RbacCheck;
@@ -43,6 +44,11 @@ class Admin extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(AdminRole::class, 'admin_role_user', 'admin_id', 'role_id')
                     ->withPivot(['admin_id', 'role_id']);
+    }
+
+    public function logs()
+    {
+        return $this->hasMany(Log::class);
     }
 
     //是否有某个觉得、某些角色
@@ -102,5 +108,6 @@ class Admin extends Authenticatable implements JWTSubject
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
 
 }

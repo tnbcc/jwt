@@ -67,6 +67,12 @@ Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
             });
 
 
+            //系统日志
+            Route::namespace('Log')->group(function () {
+               Route::resource('logs', 'LogsController');
+            });
+
+
         });
 
     });
