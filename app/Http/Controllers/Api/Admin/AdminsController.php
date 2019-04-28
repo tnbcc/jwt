@@ -98,7 +98,7 @@ class AdminsController extends Controller
     public function info()
     {
 
-        $admin = \Auth::guard('admin')->user();
+        $admin = \Auth::user();
 
         return $this->success(new AdminResource($admin));
     }
@@ -127,10 +127,14 @@ class AdminsController extends Controller
     //创建管理员角色
     public function storeRole(StoreRoleRequest $request)
     {
+
        try {
            $ids = $request->input('roles');
 
-           $roles = AdminRole::query()->findMany($ids);
+          \Auth::user()->roles()->sync($ids);
+
+
+           /*$roles = AdminRole::query()->findMany($ids);
 
            $admin = \Auth::user();
 
@@ -148,14 +152,14 @@ class AdminsController extends Controller
 
            $deleteRoles->each(function (AdminRole $role) use ($admin){
                $admin->deleteRole($role);
-           });
+           });*/
 
-           return $this->success('创建管理员角色成功');
+           return $this->setStatusCode(201)->success('创建管理员角色成功');
        } catch (\Exception $e) {
            \Log::error('创建管理员角色失败'.$e->getMessage(), [
                'data' => $ids,
            ]);
-           return $this->failed('创建管理员失败');
+           return $this->failed('创建管理员失败', 400);
        }
 
 
