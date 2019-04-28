@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d044370c-29c1-40b7-841a-38240c8bb9d4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/AdminsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/AdminsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper/" />
@@ -224,7 +223,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
                 <element signature="e#59#89#0#PHP" expanded="true" />
               </folding>
@@ -658,12 +657,12 @@
       <workItem from="1556332499756" duration="8406000" />
       <workItem from="1556373405655" duration="3228000" />
       <workItem from="1556434963754" duration="8416000" />
-      <workItem from="1556462480256" duration="2823000" />
+      <workItem from="1556462480256" duration="3002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25939000" />
+    <option name="totallyTimeSpent" value="26118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="135" y="92" width="2547" height="2002" extended-state="0" />
@@ -1088,7 +1087,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/Admin/Permission/StoreRoleRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="e#59#89#0#PHP" expanded="true" />
           </folding>
