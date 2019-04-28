@@ -22,7 +22,7 @@ class PermissionsRepository extends BaseRepository
        try {
            AdminPermission::create($request->all());
 
-           return $this->success('权限创建成功');
+           return $this->setStatusCode(201)->success('权限创建成功');
 
        } catch (\Exception $e) {
            \Log::error('权限创建失败'.$e->getMessage(), [

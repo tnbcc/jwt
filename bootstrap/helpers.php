@@ -40,3 +40,17 @@ function unique_arr($array2D, $stkeep=false, $ndformat=true)
 
     return $output;
 }
+
+function SplitData($data = [])
+{
+
+    $data = [
+        'data' => $data['data'],
+        'curPage' => $data['current_page'],
+        'total' => $data['total'],
+        'totalPage' => $data['last_page'],
+        'per_page' => $data['per_page'],
+    ];
+
+    return $data;
+}

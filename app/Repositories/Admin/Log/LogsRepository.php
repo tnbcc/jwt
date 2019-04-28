@@ -20,9 +20,10 @@ class LogsRepository extends BaseRepository
     {
         $pageSize = $request->input('pageSize', 20);
 
-        $result =  Log::with('admin:id,name,status')
-                        ->latest('created_at')
-                        ->paginate($pageSize);
+        $data =  Log::with('admin:id,name,status')
+                        ->latest()
+                        ->paginate($pageSize)->toArray();
+        $result = SplitData($data);
 
         return $this->success($result);
     }
@@ -46,7 +47,7 @@ class LogsRepository extends BaseRepository
 
             $log->delete();
 
-            return $this->setStatusCode(201)->success('删除系统日志成功');
+            return $this->success('删除系统日志成功');
 
         } catch (\Exception $e) {
            \Log::error('删除系统日志失败'.$e->getMessage(), [

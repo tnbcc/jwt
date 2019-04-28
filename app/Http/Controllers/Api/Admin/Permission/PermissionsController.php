@@ -26,6 +26,6 @@ class PermissionsController extends Controller
     //创建权限
     public function store(CreatePermissionRequest $request)
     {
-        return $this->repository->store($request);
+        return $this->permissionsService->store($request);
     }
 }

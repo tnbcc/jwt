@@ -19,7 +19,7 @@ class PermissionsService
     }
 
 
-    public function create(CreatePermissionRequest $request)
+    public function store(CreatePermissionRequest $request)
     {
         return $this->permissionsRepository->store($request);
     }
