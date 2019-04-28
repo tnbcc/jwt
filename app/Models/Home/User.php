@@ -1,15 +1,19 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Home;
 
+use App\Traits\Common\GetStatusAttribute;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable;
+    use Notifiable, GetStatusAttribute;
+
+    const TABLE = 'user';
+
+    protected $table = self::TABLE;
 
     const USER_STATUS_DELETED = -1;
     const USER_STATUS_NORMAL  = 0;
@@ -46,4 +50,5 @@ class User extends Authenticatable implements JWTSubject
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
 }

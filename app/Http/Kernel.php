@@ -61,10 +61,10 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'cors'=> \Medz\Cors\Laravel\Middleware\ShouldGroup::class,
-        'api.refresh'=>\App\Http\Middleware\Api\RefreshTokenMiddleware::class,
+        'api.refresh'=>\App\Http\Middleware\Api\Home\RefreshTokenMiddleware::class,
         'admin.refresh'=>\App\Http\Middleware\Api\Admin\RefreshAdminTokenMiddleware::class,
         'admin.guard'  => \App\Http\Middleware\Api\Admin\AdminGuardMiddleware::class,
-        'api.guard'  => \App\Http\Middleware\Api\ApiGuardMiddleware::class,
+        'api.guard'  => \App\Http\Middleware\Api\Home\ApiGuardMiddleware::class,
         'rbac'       => \App\Http\Middleware\Api\Admin\RbacAuthMiddleware::class,
     ];
 

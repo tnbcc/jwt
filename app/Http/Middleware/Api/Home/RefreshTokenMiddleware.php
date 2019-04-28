@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware\Api;
+namespace App\Http\Middleware\Api\Home;
 
 use Auth;
 use Closure;

@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Resources\Api;
+namespace App\Http\Resources\Api\Home;
 
-use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserResource extends JsonResource
@@ -15,7 +14,7 @@ class UserResource extends JsonResource
         return [
             'id'         => $this->id,
             'name'       => $this->name,
-            'status'     => User::$userStatusMap[$this->status],
+            'status'     => $this->status,
             'created_at' =>(string)$this->created_at,
             'updated_at' =>(string)$this->updated_at,
         ];

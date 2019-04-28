@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api\Admin\Log;
 
+use App\Http\Controllers\Api\Admin\AdminBaseController;
 use App\Models\Admin\Log\Log;
 use App\Repositories\Admin\Log\LogsRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class LogsController extends Controller
+class LogsController extends AdminBaseController
 {
 
     public function __construct(LogsRepository $repository)

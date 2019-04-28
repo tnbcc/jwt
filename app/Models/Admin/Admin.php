@@ -6,15 +6,14 @@ use App\Models\Admin\Log\Log;
 use App\Models\Admin\Permission\AdminRole;
 
 use App\Traits\Api\RbacCheck;
+use App\Traits\Common\GetStatusAttribute;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class Admin extends Authenticatable implements JWTSubject
 {
-    use RbacCheck;
-    use Notifiable;
+    use Notifiable, RbacCheck, GetStatusAttribute;
 
 
     const USER_STATUS_DELETED = -1;
@@ -30,12 +29,12 @@ class Admin extends Authenticatable implements JWTSubject
 
 
     protected $fillable = [
-        'name', 'password',
+        'name', 'password', 'status'
     ];
 
 
     protected $hidden = [
-        'password'
+        'password', 'last_token'
     ];
 
 
@@ -108,6 +107,5 @@ class Admin extends Authenticatable implements JWTSubject
     {
         $this->attributes['password'] = bcrypt($value);
     }
-
 
 }

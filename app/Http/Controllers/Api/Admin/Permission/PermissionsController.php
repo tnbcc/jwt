@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Api\Admin\Permission;
 
+use App\Http\Controllers\Api\Admin\AdminBaseController;
 use App\Http\Requests\Api\Admin\Permission\CreatePermissionRequest;
-use App\Repositories\Admin\Permission\PermissionsRepository;
 use App\Services\Admin\PermissionsService;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class PermissionsController extends Controller
+class PermissionsController extends AdminBaseController
 {
     protected $permissionsService;
 

@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Api\Admin\Permission;
 
 use App\Handlers\Tree;
+use App\Http\Controllers\Api\Admin\AdminBaseController;
 use App\Http\Requests\Api\Admin\Permission\CreateRoleRequest;
 use App\Http\Requests\Api\Admin\Permission\StoreRolePermissionRequest;
 use App\Models\Admin\Permission\AdminRole;
 use App\Repositories\Admin\Permission\PermissionsRepository;
 use App\Repositories\Admin\Permission\RolesRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class RolesController extends Controller
+class RolesController extends AdminBaseController
 {
     public function __construct(RolesRepository $repository)
     {
