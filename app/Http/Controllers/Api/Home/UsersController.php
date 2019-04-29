@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api\Home;
 
-use App\Http\Controllers\Api\HomeBaseController;
 use App\Http\Requests\Api\Home\UserRequest;
 use App\Models\Home\User;
 use App\Repositories\Home\UsersRepository;

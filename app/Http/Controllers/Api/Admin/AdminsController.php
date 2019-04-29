@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Requests\Api\Admin\AdminRequest;
-use App\Http\Requests\Api\Admin\Permission\StoreRoleRequest; 
+use App\Http\Requests\Api\Admin\Permission\StoreRoleRequest;
 use App\Models\Admin\Admin;
 use App\Repositories\Admin\AdminsRepository;
 use Illuminate\Http\Request;

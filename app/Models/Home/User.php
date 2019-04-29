@@ -11,9 +11,6 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable, GetStatusAttribute;
 
-    const TABLE = 'user';
-
-    protected $table = self::TABLE;
 
     const USER_STATUS_DELETED = -1;
     const USER_STATUS_NORMAL  = 0;
