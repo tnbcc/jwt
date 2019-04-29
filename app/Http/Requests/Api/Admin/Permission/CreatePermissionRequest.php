@@ -17,23 +17,20 @@ class CreatePermissionRequest extends Request
                 'min:3',
                 function ($attribute, $value, $fail) {
                     if ($name = AdminPermission::where('name', $value)->first()) {
-                        return $fail('该权限已经存在');
+                        return $fail(trans('api.permission.is_exist'));
                     }
                 }
             ],
             'description' => 'required|string',
             'parent_id' => 'integer',
-            ''
         ];
     }
 
-    public function messages()
+    public function attributes()
     {
         return [
-            'name.required'        => '权限名称不能为空',
-            'name.min'             => '权限最小长度为3',
-            'description.required' => '权限描述不能为空',
-            'description.string'   => '权限描述类型有误'
+            'name'           => trans('api.permission.name'),
+            'description'    => trans('api.permission.description'),
         ];
     }
 }

@@ -16,6 +16,7 @@
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "~2.1.0",
         "medz/cors": "^1.4",
+        "overtrue/laravel-lang": "^3.0",
         "predis/predis": "^1.1",
         "tymon/jwt-auth": "1.0.0-rc.4.1",
         "zhuzhichao/ip-location-zh": "^2.4"

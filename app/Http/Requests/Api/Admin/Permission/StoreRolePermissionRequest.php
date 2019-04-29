@@ -27,11 +27,10 @@ class StoreRolePermissionRequest extends Request
         ];
     }
 
-    public function messages()
+    public function attributes()
     {
         return [
-            'permissions.required' =>'不能为空',
-            'permissions.array'    =>'格式必须为数组',
+            'permissions' => trans('api.permissions'),
         ];
     }
 }

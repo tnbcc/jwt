@@ -16,7 +16,7 @@ class CreateRoleRequest extends Request
                 'min:3',
                 function ($attribute, $value, $fail) {
                     if ($name = AdminRole::where('name', $value)->first()) {
-                        return $fail('该角色已经存在');
+                        return $fail(trans('api.role.is_exist'));
                     }
                 }
             ],
@@ -24,13 +24,12 @@ class CreateRoleRequest extends Request
         ];
     }
 
-    public function messages()
+
+    public function attributes()
     {
         return [
-            'name.required'        => '角色名称不能为空',
-            'name.min'             => '角色最小长度为3',
-            'description.required' => '角色描述不能为空',
-            'description.string'   => '角色描述类型有误'
+            'name'           => trans('api.role.name'),
+            'description'    => trans('api.role.description'),
         ];
     }
 }

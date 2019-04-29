@@ -30,7 +30,7 @@ class ExcelService
                     try {
                         $sheet->fromArray($data, null, 'A1', true, false);
                     } catch (\Exception $e) {
-                        return $this->failed('导出失败', 400);
+                        return $this->failed(trans('api.failed.excel_export'), 400);
                     }
                     $sheet->prependRow($title);
                 });
@@ -41,7 +41,7 @@ class ExcelService
             ];
             return $this->success($data);
         } catch (\Exception $e) {
-            return $this->failed('导出失败', 400);
+            return $this->failed(trans('api.failed.excel_export'), 400);
         }
     }
 
