@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/download/excel', 'Member\MemberController@download')->name('excel.download');
