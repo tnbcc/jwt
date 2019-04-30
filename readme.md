@@ -12,7 +12,7 @@
 基于**Laravel5.7** 开发
 
 ## 前言
-基于 [laravel](http://www.laravel.com/)开发.
+基于 [laravel5.7](http://www.laravel.com/)开发.
 授权、鉴权采用 [jwt](https://github.com/tymondesigns/jwt-auth)
 
 ## 功能
