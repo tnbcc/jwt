@@ -119,6 +119,6 @@ class ExceptionReport
 
     public function prodReport()
     {
-        return $this->failed('服务器错误','500');
+        return $this->failed(trans('api.exception.500'),'500');
     }
 }
