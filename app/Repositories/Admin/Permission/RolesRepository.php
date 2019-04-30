@@ -24,13 +24,13 @@ class RolesRepository extends BaseRepository
 
             AdminRole::create($request->all());
 
-            return $this->success('创建角色成功');
+            return $this->setStatusCode(201)->success(trans('api.role.create.success'));
 
         } catch (\Exception $e) {
-          \Log::error('创建角色失败'.$e->getMessage(), [
+          \Log::error(trans('api.role.create.failed').$e->getMessage(), [
               'data' => $request->all()
           ]);
-         return $this->failed('创建角色失败', 400);
+         return $this->failed(trans('api.role.create.failed'), 400);
         }
     }
 
@@ -57,12 +57,12 @@ class RolesRepository extends BaseRepository
 
             $role->permissions()->sync($request->input('permissions'));
 
-            $this->setStatusCode(201)->success('授权成功');
+            $this->setStatusCode(201)->success(trans('api.role.authorize.success'));
         } catch (\Exception $e) {
-             \Log::error('授权失败'.$e->getMessage(), [
+             \Log::error(trans('api.role.authorize.failed').$e->getMessage(), [
                 'data' => $request->input('permissions'),
              ]);
-             return $this->failed('授权失败', 400);
+             return $this->failed(trans('api.role.authorize.failed'), 400);
         }
 
     }

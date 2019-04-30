@@ -15,17 +15,33 @@ return [
     ],
     'user' => [
         'id'   => 'user id',
-        'name' => 'username'
+        'name' => 'username',
+        'store' => [
+            'success' => 'Create a user successfully',
+            'failed'  => 'Failed to create a user'
+        ],
     ],
     'permission' => [
         'name' => 'permission name',
         'description' => 'permission description',
-        'is_exist'    => 'The permission already exists'
+        'is_exist'    => 'The permission already exists',
+        'create'      => [
+            'success' => 'Creating permission a successful',
+            'failed'  => 'Create permission a failure'
+        ]
     ],
     'role' => [
         'name' => 'role name',
         'description' => 'role description',
-        'is_exist'    => 'The role already exists'
+        'is_exist'    => 'The role already exists',
+        'create'      => [
+            'success' => 'Creating role a successful',
+            'failed'  => 'Create role a failure'
+        ],
+        'authorize'   => [
+            'success' => 'authorization successful',
+            'failed'  => 'authorization failed '
+        ]
     ],
     'permissions' => [
         'one' => 'permission',
@@ -37,7 +53,15 @@ return [
     ],
     'admin' => [
         'id' => 'manager id',
-        'name' => 'manager'
+        'name' => 'manager',
+        'store' => [
+            'success' => 'manager create success',
+            'failed'  => 'manager create failed'
+        ],
+        'role' => [
+            'success' => 'Create the administrator role a success',
+            'failed'  => 'Create the administrator role a failed'
+        ]
     ],
     'exception' => [
         '401' => 'unauthorized',
@@ -51,5 +75,36 @@ return [
     ],
     'auth' => [
         'no_permission' => 'no access'
+    ],
+    'account' => [
+        'failed'   => 'account is wrong',
+        'abnormal' => 'account is abnormal'
+    ],
+    'logout' => [
+        'success' => 'Exit the success',
+        'failed'  => 'Exit the failed'
+    ],
+    'status' => [
+        'deleted' => 'deleted',
+        'normal'  => 'normal',
+        'freeze'  => 'freeze'
+    ],
+    'log' => [
+        'system_store' => [
+            'success' => 'create system log success',
+            'failed'  => 'create system log failed'
+        ],
+        'system_delete' => [
+            'success' => 'delete system log success',
+            'failed'  => 'delete system log failed'
+        ],
+        'system_log'  => [
+            'manage'        => 'manage',
+            'login_success' => 'login success',
+            'login_failed'  => 'login failed login account for',
+            'password'      => 'the password for',
+            'operation'     => 'operation',
+            'module'        => 'module'
+        ]
     ]
 ];

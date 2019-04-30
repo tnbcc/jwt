@@ -34,10 +34,13 @@ class LogsRepository extends BaseRepository
 
             Log::create($result);
 
+            return $this->setStatusCode(201)->success(trans('api.log.system_store.success'));
+
         } catch (\Exception $e) {
-            \Log::error('新建系统日志失败'.$e->getMessage(), [
+            \Log::error(trans('api.log.system_store.failed').$e->getMessage(), [
                 'data' => $result
             ]);
+            return $this->failed(trans('api.log.system_store.failed'), 400);
         }
     }
 
@@ -47,13 +50,13 @@ class LogsRepository extends BaseRepository
 
             $log->delete();
 
-            return $this->success('删除系统日志成功');
+            return $this->success(trans('api.log.system_delete.success'));
 
         } catch (\Exception $e) {
-           \Log::error('删除系统日志失败'.$e->getMessage(), [
+           \Log::error(trans('api.log.system_delete.failed').$e->getMessage(), [
               'log_id' => $log->id,
            ]);
-           return $this->failed('删除系统日志失败', 400);
+           return $this->failed(trans('api.log.system_delete.failed'), 400);
         }
     }
 
@@ -67,14 +70,14 @@ class LogsRepository extends BaseRepository
     {
         //获取当前登录管理员信息
         if (!$admin = \Auth::user()) {
-            return $this->failed('账号异常');
+            return $this->failed(trans('api.account.abnormal'), 400);
         }
 
         $ip = $request->getClientIp();
 
         $address = Ip::find($ip);
 
-        $action = $status ? "管理员: {$admin->name} 登录成功" : " 登录失败,登录的账号为：{$request->name}　密码为：{$request->password}";
+        $action = $status ? trans('api.log.system_log.manage').": {$admin->name} ".trans('api.log.system_log.login_success') :trans('api.log.system_log.login_failed') ." ：{$request->name}".trans('api.log.system_log.password')."：{$request->password}";
 
         $data = [
             'ip'=> $ip,
@@ -114,7 +117,7 @@ class LogsRepository extends BaseRepository
 
         $address = Ip::find($request->getClientIp());
 
-        $action = "管理员: {$admin->name} 操作了 【{$parent_rule->name}】- {$rule->name} 模块";
+        $action = trans('api.log.system_log.manage').": {$admin->name} ".trans('api.log.system_log.operation')." 【{$parent_rule->name}】- {$rule->name} ".trans('api.log.system_log.module');
 
         $data = [
             'ip'=> $request->getClientIp(),

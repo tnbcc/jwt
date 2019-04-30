@@ -22,13 +22,13 @@ class PermissionsRepository extends BaseRepository
        try {
            AdminPermission::create($request->all());
 
-           return $this->setStatusCode(201)->success('权限创建成功');
+           return $this->setStatusCode(201)->success(trans('api.permission.create.success'));
 
        } catch (\Exception $e) {
-           \Log::error('权限创建失败'.$e->getMessage(), [
+           \Log::error(trans('api.create.permission.failed').$e->getMessage(), [
                'data' => $request->all()
            ]);
-           return $this->failed('权限创建失败');
+           return $this->failed(trans('api.create.permission.failed'));
        }
     }
 

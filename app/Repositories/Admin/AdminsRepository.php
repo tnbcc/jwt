@@ -42,13 +42,13 @@ class AdminsRepository extends BaseRepository
         try {
             Admin::create($request->all());
 
-            return $this->setStatusCode(201)->success('注册成功');
+            return $this->setStatusCode(201)->success(trans('api.admin.store.success'));
 
         } catch (\Exception $e) {
-            \Log::error('新建管理员失败' . $e->getMessage(), [
+            \Log::error(trans('api.admin.store.failed') . $e->getMessage(), [
                 'data' => $request->all()
             ]);
-            return $this->failed('新建管理员失败');
+            return $this->failed(trans('api.admin.store.failed'), 400);
         }
     }
 
@@ -84,14 +84,14 @@ class AdminsRepository extends BaseRepository
 
         }
 
-        return $this->failed('账号或密码错误',400);
+        return $this->failed(trans('api.account.failed'),400);
     }
 
     public function logout()
     {
         \Auth::logout();
 
-        return $this->success('退出成功');
+        return $this->success(trans('api.logout.success'));
     }
 
     public function info()
@@ -128,13 +128,13 @@ class AdminsRepository extends BaseRepository
 
             \Auth::user()->roles()->sync($ids);
 
-            return $this->setStatusCode(201)->success('创建管理员角色成功');
+            return $this->setStatusCode(201)->success(trans('api.admin.role.success'));
 
         } catch (\Exception $e) {
-            \Log::error('创建管理员角色失败'.$e->getMessage(), [
+            \Log::error(trans('api.admin.role.failed').$e->getMessage(), [
                 'data' => $ids,
             ]);
-            return $this->failed('创建管理员失败', 400);
+            return $this->failed(trans('api.admin.role.failed'), 400);
         }
     }
 

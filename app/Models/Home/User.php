@@ -30,7 +30,7 @@ class User extends Authenticatable implements JWTSubject
 
 
     protected $hidden = [
-        'password'
+        'password', 'last_token'
     ];
 
     public function getJWTIdentifier()
