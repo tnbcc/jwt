@@ -106,5 +106,9 @@ return [
             'operation'     => 'operation',
             'module'        => 'module'
         ]
+    ],
+    'emails' => [
+        'success' => 'send email success',
+        'failed'  => 'send email failed'
     ]
 ];

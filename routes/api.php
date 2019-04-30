@@ -73,7 +73,10 @@ Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
             Route::namespace('Log')->group(function () {
                Route::resource('logs', 'LogsController', ['only'=> ['index','destroy']]);
             });
-
+            //发送邮件
+            Route::namespace('Common')->group(function () {
+                Route::post('email', 'EmailController@send')->name('email.send');
+            });
 
         });
 

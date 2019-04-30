@@ -108,6 +108,10 @@ return [
             'operation'     => '操作了',
             'module'        => '模块'
         ]
+    ],
+    'email' => [
+        'success' => '发送邮件成功',
+        'failed'  => '发送邮件失败'
     ]
 
 ];
