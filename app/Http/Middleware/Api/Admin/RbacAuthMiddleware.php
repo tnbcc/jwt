@@ -29,7 +29,7 @@ class RbacAuthMiddleware
 
         if(!\Auth::user()->hasRule(\Route::currentRouteName()))
         {
-            return $this->failed('你无权访问');
+            return $this->failed(trans('api.auth.no_permission'), 403);
         }
 
         return $next($request);

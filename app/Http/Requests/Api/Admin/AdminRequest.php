@@ -36,17 +36,11 @@ class AdminRequest extends Request
         }
     }
 
-    public function messages()
+    public function attributes()
     {
         return [
-            'id.required'       =>'管理员ID必须填写',
-            'id.exists'         =>'管理员不存在',
-            'name.unique'       => '用户名已经存在',
-            'name.required'     => '用户名不能为空',
-            'name.max'          => '用户名最大长度为12个字符',
-            'password.required' => '密码不能为空',
-            'password.max'      => '密码长度不能超过16个字符',
-            'password.min'      => '密码长度不能小于6个字符'
+            'id'      => trans('api.admin.id'),
+            'name'    => trans('api.admin.name'),
         ];
     }
 }

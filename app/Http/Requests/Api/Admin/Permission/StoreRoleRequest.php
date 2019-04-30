@@ -18,7 +18,7 @@ class StoreRoleRequest extends Request
                 function ($attribute, $value, $fail) {
                      foreach ($value as $v) {
                          if (!AdminRole::find($v)) {
-                             return $fail('id为'. $v .'的'. $attribute . '不存在');
+                             return $fail(trans('api.roles.no_exist'));
                          }
                      }
                 }
@@ -27,11 +27,10 @@ class StoreRoleRequest extends Request
         ];
     }
 
-    public function messages()
+    public function attributes()
     {
         return [
-            'roles.required' =>'角色ID不能为空',
-            'roles.array'    =>'格式必须为数组',
+            'roles' => trans('api.roles.one')
         ];
     }
 }
