@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-use App\Api\Helpers\ExceptionReport;
+use App\Services\Common\ExceptionReport;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 

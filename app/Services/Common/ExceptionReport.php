@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Api\Helpers;
+namespace App\Services\Common;
 
 use App\Traits\Api\ApiResponse;
 use Exception;
@@ -44,15 +43,15 @@ class ExceptionReport
         $this->request = $request;
         $this->exception = $exception;
         $this->doReport = [
-        AuthenticationException::class => [trans('api.exception.401'), 401], //未授权 401
-        ModelNotFoundException::class => [trans('api.exception.404'), 404], //'该模型未找到', 404
-        AuthorizationException::class => [trans('api.exception.403'), 403], //'没有此权限', 403
-        ValidationException::class => [],
-        UnauthorizedHttpException::class => [trans('api.exception.422'), 422], //'未登录或登录状态失效', 422
-        TokenInvalidException::class => [trans('api.exception.400'), 400], //'token不正确', 400
-        NotFoundHttpException::class => [trans('api.exception.not_find'), 404], //未找到该页面 404
-        MethodNotAllowedHttpException::class => [trans('api.exception.405'), 405],//方法不正确 405
-    ];
+            AuthenticationException::class => [trans('api.exception.401'), 401], //未授权 401
+            ModelNotFoundException::class => [trans('api.exception.404'), 404], //'该模型未找到', 404
+            AuthorizationException::class => [trans('api.exception.403'), 403], //'没有此权限', 403
+            ValidationException::class => [],
+            UnauthorizedHttpException::class => [trans('api.exception.422'), 422], //'未登录或登录状态失效', 422
+            TokenInvalidException::class => [trans('api.exception.400'), 400], //'token不正确', 400
+            NotFoundHttpException::class => [trans('api.exception.not_find'), 404], //未找到该页面 404
+            MethodNotAllowedHttpException::class => [trans('api.exception.405'), 405],//方法不正确 405
+        ];
     }
 
     /**
