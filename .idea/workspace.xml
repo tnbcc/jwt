@@ -158,8 +158,8 @@
       <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1968">
-              <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+            <state relative-caret-position="1836">
+              <caret line="82" column="11" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -167,8 +167,8 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
-              <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+            <state relative-caret-position="432">
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -177,8 +177,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="384">
-                <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <first_editor relative-caret-position="1488">
+                <caret line="62" column="67" selection-start-line="62" selection-start-column="67" selection-end-line="62" selection-end-column="67" />
               </first_editor>
               <second_editor />
             </state>
@@ -495,6 +495,32 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Services" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="jwt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jwt" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="jwt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jwt" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="caouecs" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="jwt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jwt" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="caouecs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravel-lang" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="jwt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jwt" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="caouecs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravel-lang" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -550,12 +576,12 @@
       <workItem from="1556462480256" duration="9163000" />
       <workItem from="1556525602861" duration="3567000" />
       <workItem from="1556547769447" duration="5571000" />
-      <workItem from="1556589716810" duration="12743000" />
+      <workItem from="1556589716810" duration="13102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54160000" />
+    <option name="totallyTimeSpent" value="54519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="135" y="23" width="2547" height="2071" extended-state="0" />
@@ -854,25 +880,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1968">
-          <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+        <state relative-caret-position="432">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+        <state relative-caret-position="1836">
+          <caret line="82" column="11" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="384">
-            <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <first_editor relative-caret-position="1488">
+            <caret line="62" column="67" selection-start-line="62" selection-start-column="67" selection-end-line="62" selection-end-column="67" />
           </first_editor>
           <second_editor />
         </state>

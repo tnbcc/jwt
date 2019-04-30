@@ -54,8 +54,12 @@
 > php artisan jwt:secret 
 
 ### 8.执行迁移文件
-> php artisan migrate 
+> php artisan migrate
 
-### 9.自行根据route/api.php 路由 用postman自行访问
+### 9 注意事项
+> 下载完overtrue/laravel-lang 记得将 vendor/caouecs/laravel-lang/src/ 下的 zh-CN 文件夹重命名为cn
+> 这样在切换双语提示的时候 只用修改 config/app.php 中的 locale = 'cn or en' 即可
+
+### 10.自行根据route/api.php 路由 用postman自行访问 （可联系我的邮箱打包postman json格式文件）
 
 欢迎大家 PR 如果对你有帮助可以点个小star  本人邮箱：tniub.cc@gmail.com
