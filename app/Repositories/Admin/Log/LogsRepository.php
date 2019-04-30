@@ -81,7 +81,7 @@ class LogsRepository extends BaseRepository
 
         $data = [
             'ip'=> $ip,
-            'address'=> $address[0].$address[1].$address[2],
+            'address'=> $address[0] == $address[1] ? $address[0].$address[2] : $address[0].$address[1].$address[2],
             'action'=> $action,
         ];
         $result = [
@@ -117,11 +117,12 @@ class LogsRepository extends BaseRepository
 
         $address = Ip::find($request->getClientIp());
 
+
         $action = trans('api.log.system_log.manage').": {$admin->name} ".trans('api.log.system_log.operation')." 【{$parent_rule->name}】- {$rule->name} ".trans('api.log.system_log.module');
 
         $data = [
             'ip'=> $request->getClientIp(),
-            'address'=> $address[0].$address[1].$address[2],
+            'address'=> $address[0] == $address[1] ? $address[0].$address[2] : $address[0].$address[1].$address[2],
             'action'=> $action,
         ];
 
