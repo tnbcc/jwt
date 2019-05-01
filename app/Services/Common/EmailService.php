@@ -17,9 +17,11 @@ class EmailService
 
         try {
 
-            dispatch(new SendEmailJob($emails));
+            $flag = dispatch(new SendEmailJob($emails));
 
-            return $this->success(trans('api.email.success'));
+            if ($flag) {
+                return $this->success(trans('api.email.success'));
+            }
 
         } catch (\Exception $e) {
            \Log::error(trans('api.email.failed').$e->getMessage(), [

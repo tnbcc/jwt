@@ -25,10 +25,11 @@ class SendEmailJob implements ShouldQueue
     {
 
          try {
-             \Log::info('xxx', [
-                 'emails' => $this->emails
-             ]);
-             Mail::to($this->emails)->send(new SendEmailTest());
+             $flag = Mail::send('emails.default',['name'=>'初三在读'],function($message){
+                 $to = '1072155122@qq.com';
+                 $message ->to($to)->subject('测试邮件');
+             });
+             return $flag;
          } catch (\Exception $e) {
              \Log::error(trans('api.email.failed').$e->getMessage(), [
                  'emails' => $this->emails
