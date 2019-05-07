@@ -56,7 +56,7 @@ class Handler extends ExceptionHandler
             if ($reporter->shouldReturn()) {
                 return $reporter->report();
             }
-            if(env('APP_DEBUG')){
+            if (env('APP_DEBUG')) {
                 //开发环境，则显示详细错误信息
                 return parent::render($request, $exception);
             } else {
