@@ -47,7 +47,8 @@ trait ApiResponse
      * @param null $code
      * @return mixed
      */
-    public function status($status, array $data, $code = null){
+    public function status($status, array $data, $code = null)
+    {
 
         if ($code) {
             $this->setStatusCode($code);
@@ -69,7 +70,8 @@ trait ApiResponse
      * @param string $status
      * @return mixed
      */
-    public function failed($message, $code = FoundationResponse::HTTP_BAD_REQUEST, $status = 'error'){
+    public function failed($message, $code = FoundationResponse::HTTP_BAD_REQUEST, $status = 'error')
+    {
 
         return $this->setStatusCode($code)->message($message, $status);
     }
@@ -79,7 +81,8 @@ trait ApiResponse
      * @param string $status
      * @return mixed
      */
-    public function message($message, $status = "success"){
+    public function message($message, $status = "success")
+    {
 
         return $this->status($status,[
             'message' => $message
@@ -90,7 +93,8 @@ trait ApiResponse
      * @param string $message
      * @return mixed
      */
-    public function internalError($message = "Internal Error!"){
+    public function internalError($message = "Internal Error!")
+    {
 
         return $this->failed($message,FoundationResponse::HTTP_INTERNAL_SERVER_ERROR);
     }
@@ -111,7 +115,8 @@ trait ApiResponse
      * @param string $status
      * @return mixed
      */
-    public function success($data, $status = "success"){
+    public function success($data, $status = "success")
+    {
 
         return $this->status($status, compact('data'));
     }
