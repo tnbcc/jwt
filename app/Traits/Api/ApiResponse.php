@@ -49,7 +49,7 @@ trait ApiResponse
      */
     public function status($status, array $data, $code = null){
 
-        if ($code){
+        if ($code) {
             $this->setStatusCode($code);
         }
 
@@ -58,7 +58,7 @@ trait ApiResponse
             'code' => $this->statusCode
         ];
 
-        $data = array_merge($status,$data);
+        $data = array_merge($status, $data);
         return $this->respond($data);
 
     }
