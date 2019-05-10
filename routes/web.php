@@ -13,6 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('wechat.oauth:snsapi_base');
 
 Route::get('/download/excel', 'Member\MemberController@download')->name('excel.download');
+
+Route::any('/wechat', 'WeChatController@serve');

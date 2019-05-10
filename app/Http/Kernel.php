@@ -66,6 +66,7 @@ class Kernel extends HttpKernel
         'admin.guard'  => \App\Http\Middleware\Api\Admin\AdminGuardMiddleware::class,
         'api.guard'  => \App\Http\Middleware\Api\Home\ApiGuardMiddleware::class,
         'rbac'       => \App\Http\Middleware\Api\Admin\RbacAuthMiddleware::class,
+        'wechat.oauth' => \Overtrue\LaravelWeChat\Middleware\OAuthAuthenticate::class,
     ];
 
     /**
